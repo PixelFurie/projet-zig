@@ -32,11 +32,6 @@ pub fn main(init: std.process.Init) !void {
         _ = try enfant.wait(io);
     } else if (choix == 5) {
         var enfant = try std.process.spawn(io, .{
-            .argv = &.{"./choix5"},
-        });
-        _ = try enfant.wait(io);
-    } else if (choix == 6) {
-        var enfant = try std.process.spawn(io, .{
             .argv = &.{"./arret"},
         });
         _ = try enfant.wait(io);

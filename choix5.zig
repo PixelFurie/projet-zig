@@ -15,7 +15,7 @@ pub fn main(init: std.process.Init) !void {
     std.debug.print("donne le deuxieme nombre a multiplier", .{});
     const ligne3 = (try reader.takeDelimiter('\n')) orelse return;
     deuxieme_nombre = std.fmt.parseFloat(f32, std.mem.trim(u8, ligne3, " \r\n")) catch return;
-    resultat = premier_nombre % deuxieme_nombre;
+    resultat = @rem(premier_nombre, deuxieme_nombre);
     std.debug.print("voicie le résulta de ton calcule{d}\n", .{resultat});
     var enfant = try std.process.spawn(io, .{
         .argv = &.{"./calculatrice"},

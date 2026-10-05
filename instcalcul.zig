@@ -27,9 +27,6 @@ pub fn main(init: std.process.Init) !void {
         .argv = &.{ "zig", "build-exe", "arret.zig" },
     });
     _ = try fin.wait(io);
-    var go = try std.process.spawn(io, .{
-        .argv = &.{ "zig", "build-exe", "choix5.zig" },
-    });
-    _ = try go.wait(io);
     std.debug.print("s'est terminer\n", .{});
+    std.debug.print("oublie pas que pour lanser il faut faire ./calculatrice\n", .{});
 }
